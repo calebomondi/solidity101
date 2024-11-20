@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "mssg",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getMssg",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"scripts/jkuat.sol": "JKUAT"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"scripts/jkuat.sol": {
+			"keccak256": "0x431a772c93b37b5ad332875f34f777365234d5d624c743e23c8f672f88ea6f69",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7c292484551d0136c4e578bfb074fad5cd401c809f5c843e0884b95fab1efa5",
+				"dweb:/ipfs/QmSBbU6gB5GFn8EqYjGsdaMiqQ45HohpJkcFdGJNndWbKM"
+			]
+		}
+	},
+	"version": 1
+}

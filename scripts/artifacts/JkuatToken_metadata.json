@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_newName",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "mint10",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"scripts/jkuat.sol": "JkuatToken"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"scripts/jkuat.sol": {
+			"keccak256": "0xfd10dccf1af7bbc61bfc96c5b8f4dc3e315dd01d80cd907859a916b722374705",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a825ee1ef099e3d5ab6f27680136eac7f5b2c955591506280ec271650eb1df52",
+				"dweb:/ipfs/QmT5qfHHD4hRifqJnUVFDQBVBkyLbki4TYxUrn3KeKB7Vc"
+			]
+		}
+	},
+	"version": 1
+}
