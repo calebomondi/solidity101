@@ -6,7 +6,7 @@ pragma solidity ^0.8.0;
 // 3️⃣ Call the createUser function with the correct inputs
 
 interface IUser {
-    function createUser(address userAddress, string memory username) external;
+    function createUser(address _userAddress, string memory _username) external;
 }
 
 contract Game {
@@ -15,6 +15,7 @@ contract Game {
 
     constructor(address _userContractAddress) {
         // CODE HERE
+        userContract = IUser(_userContractAddress);
     }
 
     function startGame(string memory username) external {
@@ -22,5 +23,6 @@ contract Game {
         gameCount++;
     
         // CODE HERE
+        userContract.createUser(msg.sender, username);
     }
 }
