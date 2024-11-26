@@ -19,6 +19,8 @@ interface IProfile {
     }
     
     // CODE HERE
+    function getProfile(address _user) external view returns (UserProfile memory);
+
 }
 
 contract Twitter is Ownable {
@@ -41,8 +43,15 @@ contract Twitter is Ownable {
     event TweetLiked(address liker, address tweetAuthor, uint256 tweetId, uint256 newLikeCount);
     event TweetUnliked(address unliker, address tweetAuthor, uint256 tweetId, uint256 newLikeCount);
 
-    constructor(address _profileContract) {
-       
+    constructor(address _profileContract) Ownable(msg.sender) {
+       profileContract = IProfile(_profileContract);
+    }
+
+    //modifier
+    modifier onlyRegistered() {        
+        IProfile.UserProfile memory profile =  profileContract.getProfile(msg.sender);
+        require(bytes(profile.displayName).length > 0, "USER HAS NO PROFILE");  
+        _;
     }
 
     function changeTweetLength(uint16 newTweetLength) public onlyOwner {
@@ -59,7 +68,7 @@ contract Twitter is Ownable {
         return totalLikes;
     }
 
-    function createTweet(string memory _tweet) public {
+    function createTweet(string memory _tweet) public onlyRegistered {
         require(bytes(_tweet).length <= MAX_TWEET_LENGTH, "Tweet is too long bro!" );
 
         Tweet memory newTweet = Tweet({
@@ -76,7 +85,7 @@ contract Twitter is Ownable {
         emit TweetCreated(newTweet.id, newTweet.author, newTweet.content, newTweet.timestamp);
     }
 
-    function likeTweet(address author, uint256 id) external {  
+    function likeTweet(address author, uint256 id) external onlyRegistered {  
         require(tweets[author][id].id == id, "TWEET DOES NOT EXIST");
 
         tweets[author][id].likes++;
@@ -85,7 +94,7 @@ contract Twitter is Ownable {
         emit TweetLiked(msg.sender, author, id, tweets[author][id].likes);
     }
 
-    function unlikeTweet(address author, uint256 id) external {
+    function unlikeTweet(address author, uint256 id) external onlyRegistered {
         require(tweets[author][id].id == id, "TWEET DOES NOT EXIST");
         require(tweets[author][id].likes > 0, "TWEET HAS NO LIKES");
         
