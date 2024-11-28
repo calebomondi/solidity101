@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
-// 1️⃣ Add id to Tweet Struct to make every Tweet Unique
-// 2️⃣ Set the id to be the Tweet[] length 
+// 1️⃣ Add id to Tweet Struct to make every Tweet Unique /
+// 2️⃣ Set the id to be the Tweet[] length /
 // HINT: you do it in the createTweet function
 // 3️⃣ Add a function to like the tweet
 // HINT: there should be 2 parameters, id and author
@@ -16,6 +16,7 @@ contract Twitter {
     uint16 public MAX_TWEET_LENGTH = 280;
 
     struct Tweet {
+        uint256 id;
         address author;
         string content;
         uint256 timestamp;
@@ -37,10 +38,24 @@ contract Twitter {
         MAX_TWEET_LENGTH = newTweetLength;
     }
 
+    function likeTweet(address _author,uint _id) external  {
+        require(tweets[_author][_id].author == _author, "This Owner Does Not Exist!");
+        require(tweets[_author][_id].id == _id, "Tweet Does Not Exist");
+        tweets[_author][_id].likes += 1;
+    }
+
+    function unLikeTweet(address _author,uint _id) external  {
+        require(tweets[_author][_id].author == _author, "This Owner Does Not Exist!");
+        require(tweets[_author][_id].id == _id, "Tweet Does Not Exist");
+        require(tweets[_author][_id].likes > 0,"You can't UnLike this Tweet");
+        tweets[_author][_id].likes -= 1;
+    }
+
     function createTweet(string memory _tweet) public {
         require(bytes(_tweet).length <= MAX_TWEET_LENGTH, "Tweet is too long bro!" );
 
         Tweet memory newTweet = Tweet({
+            id: tweets[msg.sender].length,
             author: msg.sender,
             content: _tweet,
             timestamp: block.timestamp,
