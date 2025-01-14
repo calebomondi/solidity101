@@ -31,7 +31,7 @@ contract  Twitter{
     mapping (address => Tweet[]) public   tweets;
 
     modifier  onlyOwner() {
-        require(msg.sender == owner, "You Are Not The Owner!");
+        require(msg.sender == owner, "Only Owner Of The Tweet Can Execute This Action!");
         _;
     }
 
