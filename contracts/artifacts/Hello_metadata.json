@@ -6,8 +6,32 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [],
-				"name": "welcom",
+				"name": "hello",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "sayHello",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -47,11 +71,11 @@
 	},
 	"sources": {
 		"contracts/hello.sol": {
-			"keccak256": "0x6bfb6c35faf612ac8ab36ef5b0014c7be311f3dd13fc9e66cade39b43ef5400d",
-			"license": "MIT",
+			"keccak256": "0x63af427d0a42a920055d56d0328451fa004f8372e00c7bfa18636c30de47a561",
+			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://245a56b4b453f09f03eb915227c37becd3d6446f000bd83db44428ca50751f2d",
-				"dweb:/ipfs/QmXq2Zezp5sQ1vj1To4mw3Jv7g8oRsgQbezSwgXhx9La7c"
+				"bzz-raw://6667b465b753f82998527aaf9ca89678f0fbce72f940e1d4754cda0d285fb183",
+				"dweb:/ipfs/QmcjccCDkgsYdAyQGpgf1b82Z3Mrpz679uSMnWM8G31ZAx"
 			]
 		}
 	},
