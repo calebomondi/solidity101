@@ -25,6 +25,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getNames",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -123,11 +136,11 @@
 	},
 	"sources": {
 		"contracts/Array.sol": {
-			"keccak256": "0x6e78e2a9d1d47e47bebd39f5e7f23e7b11362f5469e9674c363e7b010074e2ec",
+			"keccak256": "0x2e92ef863644f5cc1bd344b40fc1a7ac40112db99feb9595ba0ab8eb05af22ff",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6d8a95620a3a78b87bc1b9c8d3392ae446e4e2a9678778848bdd0c8747950913",
-				"dweb:/ipfs/QmR7EFdfCGb7r5UVN73oTsok6STG3KwgxNGnti7PnfKbjG"
+				"bzz-raw://5dde167f87e99603510e7e840e076f2d990cc61d3064171b999cda8a4ae8b0a0",
+				"dweb:/ipfs/QmcJi8HBWRSSS4VvUp1CLmrnNqT3g49AbzeMir3v9nx1w9"
 			]
 		}
 	},

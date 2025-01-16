@@ -15,4 +15,8 @@ contract ArrayExample {
     function set(string memory value) public  {
         names.push(value);
     }
+
+    function getNames() public  view returns (string[] memory) {
+        return names;
+    }
 }
